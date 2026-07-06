@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Navbar } from "../components/site/Navbar";
+import { Footer } from "../components/site/Footer";
+import { WhatsAppButton } from "../components/site/WhatsAppButton";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +80,62 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Badaie Heavy General Contracting Est. | Al Jubail, KSA" },
+      {
+        name: "description",
+        content:
+          "Badaie Heavy General Contracting Est. delivers civil, industrial, mechanical, electrical & piping construction services across the Kingdom of Saudi Arabia. Based in Al Jubail.",
+      },
+      { name: "author", content: "Badaie Heavy General Contracting Est." },
+      { name: "keywords", content: "Badaie, heavy contracting, Al Jubail, Saudi Arabia, civil construction, industrial maintenance, mechanical, electrical, piping, steel fabrication, KSA contractor" },
+      { property: "og:title", content: "Badaie Heavy General Contracting Est." },
+      { property: "og:description", content: "Building Excellence Through Quality, Safety & Innovation — trusted heavy contractor in the Kingdom of Saudi Arabia." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Badaie Heavy Contracting" },
+      { property: "og:url", content: "https://www.badaie.com" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@BH_Contracting" },
+      { name: "twitter:title", content: "Badaie Heavy General Contracting Est." },
+      { name: "twitter:description", content: "Building Excellence Through Quality, Safety & Innovation." },
+      { name: "theme-color", content: "#0B1F3A" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: "/" },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "GeneralContractor",
+          name: "Badaie Heavy General Contracting Est.",
+          url: "https://www.badaie.com",
+          telephone: "+966508526516",
+          email: "info@badaie.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Ibn Al Jawzi St., Al Dana District",
+            addressLocality: "Al Jubail",
+            postalCode: "35514",
+            addressCountry: "SA",
+          },
+          areaServed: "SA",
+          sameAs: [
+            "https://www.linkedin.com/company/badaie-heavy-gen-cont-est/",
+            "https://www.facebook.com/share/1YBqEP3SAQ/",
+            "https://youtube.com/@bhc_sa",
+            "https://x.com/BH_Contracting",
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +163,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Navbar />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }
