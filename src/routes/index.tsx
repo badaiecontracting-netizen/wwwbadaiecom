@@ -111,7 +111,7 @@ function Home() {
               className="rounded-sm shadow-xl w-full aspect-[4/3] object-cover"
             />
             <div className="absolute -bottom-8 -right-4 md:right-8 bg-navy text-white p-6 md:p-8 max-w-xs shadow-xl">
-              <div className="text-5xl font-display text-gold">20+</div>
+              <div className="text-5xl font-display text-gold">5+</div>
               <div className="text-sm text-white/70 uppercase tracking-widest mt-1">Years Delivering<br />Heavy Contracting</div>
             </div>
           </div>
