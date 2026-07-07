@@ -16,10 +16,11 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Badaie Heavy General Contracting Est. | Building Excellence in KSA" },
       { name: "description", content: "Premier heavy general contractor in Al Jubail, Saudi Arabia. Civil, industrial, mechanical, electrical, piping and steel fabrication services with a proven track record of quality, safety and innovation." },
-      { property: "og:title", content: "Badaie Heavy General Contracting Est." },
-      { property: "og:description", content: "Building Excellence Through Quality, Safety & Innovation." },
+      { property: "og:title", content: "Badaie Heavy General Contracting Est. — Building Excellence in KSA" },
+      { property: "og:description", content: "Premier heavy general contractor in Al Jubail, Saudi Arabia — civil, industrial, mechanical, electrical, piping and steel fabrication services." },
+      { property: "og:url", content: "https://www.badaie.com/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.badaie.com/" }],
   }),
   component: Home,
 });
