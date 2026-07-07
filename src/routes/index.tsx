@@ -192,9 +192,9 @@ function Home() {
         />
         <div className="container-x relative grid gap-10 md:grid-cols-4">
           {[
-            { Icon: Award, t: "Proven Excellence", d: "20+ years of consistent, on-time delivery across the Kingdom." },
+            { Icon: Award, t: "Proven Excellence", d: "5+ years of consistent, on-time delivery across the Kingdom." },
             { Icon: ShieldCheck, t: "Safety First", d: "Zero-compromise HSE culture on every project site." },
-            { Icon: Users, t: "Skilled Workforce", d: "1,500+ trained engineers, supervisors and craftsmen." },
+            { Icon: Users, t: "Skilled Workforce", d: "150+ trained engineers, supervisors and craftsmen." },
             { Icon: Boxes, t: "Fully Equipped", d: "Owned fleet of heavy machinery and specialized tools." },
           ].map(({ Icon, t, d }) => (
             <div key={t} className="border-l border-white/15 pl-5">
