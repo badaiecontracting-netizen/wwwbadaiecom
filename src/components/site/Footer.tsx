@@ -40,7 +40,7 @@ export function Footer() {
         <div>
           <Link to="/" className="flex items-center gap-3">
             <div className="grid h-14 w-14 place-items-center rounded-full bg-white p-1">
-              <img src={logo.url} alt="Badaie" className="h-full w-full object-contain" />
+              <img src={logo.url} alt="Badaie" className="h-full w-full object-cover rounded-full" />
             </div>
             <div>
               <div className="font-display text-lg text-white">Badaie</div>

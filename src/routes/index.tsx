@@ -26,9 +26,9 @@ export const Route = createFileRoute("/")({
 });
 
 const STATS = [
-  { end: 20, suffix: "+", label: "Years of Experience" },
-  { end: 350, suffix: "+", label: "Projects Completed" },
-  { end: 1500, suffix: "+", label: "Skilled Workforce" },
+  { end: 5, suffix: "+", label: "Years of Experience" },
+  { end: 15, suffix: "+", label: "Projects Completed" },
+  { end: 150, suffix: "+", label: "Skilled Workforce" },
   { end: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
@@ -111,7 +111,7 @@ function Home() {
               className="rounded-sm shadow-xl w-full aspect-[4/3] object-cover"
             />
             <div className="absolute -bottom-8 -right-4 md:right-8 bg-navy text-white p-6 md:p-8 max-w-xs shadow-xl">
-              <div className="text-5xl font-display text-gold">20+</div>
+              <div className="text-5xl font-display text-gold">5+</div>
               <div className="text-sm text-white/70 uppercase tracking-widest mt-1">Years Delivering<br />Heavy Contracting</div>
             </div>
           </div>
@@ -192,9 +192,9 @@ function Home() {
         />
         <div className="container-x relative grid gap-10 md:grid-cols-4">
           {[
-            { Icon: Award, t: "Proven Excellence", d: "20+ years of consistent, on-time delivery across the Kingdom." },
+            { Icon: Award, t: "Proven Excellence", d: "5+ years of consistent, on-time delivery across the Kingdom." },
             { Icon: ShieldCheck, t: "Safety First", d: "Zero-compromise HSE culture on every project site." },
-            { Icon: Users, t: "Skilled Workforce", d: "1,500+ trained engineers, supervisors and craftsmen." },
+            { Icon: Users, t: "Skilled Workforce", d: "150+ trained engineers, supervisors and craftsmen." },
             { Icon: Boxes, t: "Fully Equipped", d: "Owned fleet of heavy machinery and specialized tools." },
           ].map(({ Icon, t, d }) => (
             <div key={t} className="border-l border-white/15 pl-5">

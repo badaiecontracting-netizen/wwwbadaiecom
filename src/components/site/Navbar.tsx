@@ -37,7 +37,7 @@ export function Navbar() {
       <div className="container-x flex h-20 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 shrink-0 group" onClick={() => setOpen(false)}>
           <div className="grid h-12 w-12 place-items-center rounded-full bg-white/95 p-1 shadow-md ring-1 ring-gold/40 transition group-hover:ring-gold">
-            <img src={logo.url} alt="Badaie" className="h-full w-full object-contain" />
+            <img src={logo.url} alt="Badaie" className="h-full w-full object-cover rounded-full" />
           </div>
           <div className="hidden sm:block leading-tight">
             <div className="text-white font-display text-lg font-semibold tracking-tight">Badaie</div>
