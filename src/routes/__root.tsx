@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Building Excellence Through Quality, Safety & Innovation — trusted heavy contractor in the Kingdom of Saudi Arabia." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Badaie Heavy Contracting" },
-      { property: "og:url", content: "https://www.badaie.com" },
+      
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@BH_Contracting" },
       { name: "twitter:title", content: "Badaie Heavy General Contracting Est." },
