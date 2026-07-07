@@ -26,9 +26,9 @@ export const Route = createFileRoute("/")({
 });
 
 const STATS = [
-  { end: 20, suffix: "+", label: "Years of Experience" },
-  { end: 350, suffix: "+", label: "Projects Completed" },
-  { end: 1500, suffix: "+", label: "Skilled Workforce" },
+  { end: 5, suffix: "+", label: "Years of Experience" },
+  { end: 15, suffix: "+", label: "Projects Completed" },
+  { end: 150, suffix: "+", label: "Skilled Workforce" },
   { end: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
