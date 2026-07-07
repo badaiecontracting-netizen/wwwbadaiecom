@@ -49,7 +49,9 @@ function Equipment() {
       />
 
       <section className="section-y bg-white">
-        <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="container-x">
+          <h2 className="sr-only">Equipment categories</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {EQUIPMENT.map((e) => (
             <div key={e.t} className="group bg-secondary overflow-hidden hover-lift">
               <div className="aspect-[4/3] overflow-hidden">
@@ -61,6 +63,7 @@ function Equipment() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </>

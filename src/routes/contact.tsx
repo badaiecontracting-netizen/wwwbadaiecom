@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { MapPin, Phone, Mail, MessageCircle, Send, Clock } from "lucide-react";
 
@@ -67,8 +67,10 @@ function Contact() {
               <Field label="Subject" name="subject" />
             </div>
             <div className="mt-5">
-              <label className="block text-xs uppercase tracking-widest text-white/60 mb-2">Message *</label>
+              <label htmlFor="contact-message" className="block text-xs uppercase tracking-widest text-white/60 mb-2">Message *</label>
               <textarea
+                id="contact-message"
+                name="message"
                 required
                 rows={5}
                 className="w-full bg-white/5 border-b border-white/25 focus:border-gold outline-none p-3 text-white resize-none transition"
@@ -102,10 +104,12 @@ function Contact() {
 }
 
 function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+  const id = useId();
   return (
     <div>
-      <label className="block text-xs uppercase tracking-widest text-white/60 mb-2">{label}{required && " *"}</label>
+      <label htmlFor={id} className="block text-xs uppercase tracking-widest text-white/60 mb-2">{label}{required && " *"}</label>
       <input
+        id={id}
         name={name}
         type={type}
         required={required}

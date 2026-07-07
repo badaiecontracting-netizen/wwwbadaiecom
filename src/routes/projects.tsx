@@ -52,6 +52,7 @@ function Projects() {
 
       <section className="section-y bg-white">
         <div className="container-x">
+          <h2 className="sr-only">Filter and browse projects</h2>
           <div className="flex flex-wrap gap-2 md:gap-3 mb-10 justify-center">
             {CATS.map((c) => (
               <button
