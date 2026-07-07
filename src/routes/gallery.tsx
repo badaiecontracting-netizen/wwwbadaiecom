@@ -51,6 +51,7 @@ function Gallery() {
               <button
                 key={i}
                 onClick={() => setActive(src)}
+                aria-label={`Open gallery image ${i + 1} of ${IMAGES.length}`}
                 className="block w-full break-inside-avoid overflow-hidden group relative"
               >
                 <img src={src} alt="" loading="lazy" className="w-full transition-transform duration-[900ms] group-hover:scale-110" />

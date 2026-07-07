@@ -48,7 +48,9 @@ function Services() {
       />
 
       <section className="section-y bg-white">
-        <div className="container-x grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="container-x">
+          <h2 className="sr-only">Service disciplines</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map(({ Icon, title, desc, img }) => (
             <article key={title} className="group relative bg-white border border-border overflow-hidden hover-lift">
               <div className="aspect-[16/10] overflow-hidden">
@@ -66,6 +68,7 @@ function Services() {
               </div>
             </article>
           ))}
+          </div>
         </div>
       </section>
 
