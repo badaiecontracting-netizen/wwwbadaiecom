@@ -19,34 +19,23 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Locate and Clean Output Directory
+      - name: Re-Route Output Folders to Root
         run: |
-          # Detect which output directory actually exists
-          if [ -d "dist/client" ]; then
-            TARGET_DIR="dist/client"
+          mkdir -p final_root_dist
+          # Copy whatever output subfolder Lovable built into the root package path
+          if [ -d "dist/wwwbadaiecom" ]; then
+            cp -r dist/wwwbadaiecom/* final_root_dist/
+          elif [ -d "dist/client" ]; then
+            cp -r dist/client/* final_root_dist/
           elif [ -d "dist" ]; then
-            TARGET_DIR="dist"
-          elif [ -d "build" ]; then
-            TARGET_DIR="build"
-          elif [ -d "out" ]; then
-            TARGET_DIR="out"
-          else
-            # If no standard folder exists, create one and copy all build outputs
-            mkdir -p final_output
-            cp -r * final_output/ 2>/dev/null || true
-            TARGET_DIR="final_output"
+            cp -r dist/* final_root_dist/
           fi
-          
-          echo "Found deployment directory: $TARGET_DIR"
-          echo "DEPLOY_PATH=$TARGET_DIR" >> $GITHUB_ENV
-          
-          # Add custom domain configuration file directly into the detected folder
-          echo "badaie.com" > "$TARGET_DIR/CNAME"
-          # Create a backup index for custom base path clean fallbacks
-          cp "$TARGET_DIR/index.html" "$TARGET_DIR/404.html" || true
+          # Inject domain tracking records
+          echo "badaie.com" > final_root_dist/CNAME
+          cp final_root_dist/index.html final_root_dist/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.DEPLOY_PATH }}
+          path: final_root_dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
