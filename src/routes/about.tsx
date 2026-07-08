@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Target, Eye, Gem, Award, ShieldCheck, Users, Building2, CheckCircle2 } from "lucide-react";
 import aboutImg from "@/assets/about-industrial.jpg";
-import mdImg from "@/assets/md-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -97,22 +96,17 @@ function About() {
 
       {/* MD Message */}
       <section className="section-y bg-navy-deep text-white">
-        <div className="container-x grid gap-12 lg:grid-cols-[420px_1fr] items-center">
-          <div className="relative">
-            <img src={mdImg} alt="Managing Director" loading="lazy" width={900} height={1100} className="w-full object-cover" />
-            <div className="absolute -bottom-4 -right-4 bg-gold text-navy px-6 py-4">
-              <div className="font-display text-lg">Eng. Badaie</div>
-              <div className="text-xs uppercase tracking-widest">Managing Director</div>
-            </div>
+        <div className="container-x max-w-4xl">
+          <p className="eyebrow"><span className="gold-line">Managing Director's Message</span></p>
+          <h2 className="mt-4 text-3xl md:text-4xl font-display">"We don't just build structures — we build trust."</h2>
+          <div className="mt-6 space-y-4 text-white/70 leading-relaxed">
+            <p>We began with a simple belief: that the Kingdom's growth demands contractors who honor their word, protect their people, and deliver excellence in every discipline.</p>
+            <p>That belief still drives every project we undertake — from the smallest maintenance shutdown to the largest civil and industrial installation. Our people, our systems and our equipment are all built for one purpose: to serve our clients with distinction.</p>
+            <p>Thank you for your continued trust in Badaie.</p>
           </div>
-          <div>
-            <p className="eyebrow"><span className="gold-line">Managing Director's Message</span></p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-display">"We don't just build structures — we build trust."</h2>
-            <div className="mt-6 space-y-4 text-white/70 leading-relaxed">
-              <p>Two decades ago, we began with a simple belief: that the Kingdom's growth demands contractors who honor their word, protect their people, and deliver excellence in every discipline.</p>
-              <p>Today, that belief still drives every project we undertake — from the smallest maintenance shutdown to the largest civil and industrial installation. Our people, our systems and our equipment are all built for one purpose: to serve our clients with distinction.</p>
-              <p>Thank you for your continued trust in Badaie.</p>
-            </div>
+          <div className="mt-8 inline-block bg-gold text-navy px-6 py-4">
+            <div className="font-display text-lg">Eng. Badaie</div>
+            <div className="text-xs uppercase tracking-widest">Managing Director</div>
           </div>
         </div>
       </section>
