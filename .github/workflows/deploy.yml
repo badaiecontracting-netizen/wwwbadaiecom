@@ -18,29 +18,15 @@ jobs:
         with:
           bun-version: latest
       - run: bun install
-      # Forces the framework to generate a static html deployment export
       - run: bun run build
-        env:
-          NITRO_PRESET: github-pages
-          STATIC: true
-      - name: Route Build Artifacts Cleanly
+      - name: Configure Custom Domain Tracking
         run: |
-          # Locate static folder fallback configurations
-          if [ -d ".output/public" ]; then
-            TARGET_DIR=".output/public"
-          elif [ -d "dist" ]; then
-            TARGET_DIR="dist"
-          else
-            TARGET_DIR="."
-          fi
-          
-          echo "Deploying from: $TARGET_DIR"
-          echo "badaie.com" > "$TARGET_DIR/CNAME"
-          cp "$TARGET_DIR/index.html" "$TARGET_DIR/404.html" || true
-          echo "DEPLOY_PATH=$TARGET_DIR" >> $GITHUB_ENV
+          # Inject domain routing files straight to the active compilation destination
+          echo "badaie.com" > .output/public/CNAME
+          cp .output/public/index.html .output/public/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.DEPLOY_PATH }}
+          path: .output/public
   deploy:
     needs: build
     runs-on: ubuntu-latest
