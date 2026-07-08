@@ -19,9 +19,22 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
+      - name: Ensure Output Directory Exists
+        run: |
+          if [ -d "dist/client" ]; then
+            echo "Found dist/client folder"
+            echo "DEPLOY_PATH=dist/client" >> $GITHUB_ENV
+          elif [ -d "dist" ]; then
+            echo "Found dist folder"
+            echo "DEPLOY_PATH=dist" >> $GITHUB_ENV
+          else
+            echo "Fall back to root directory structure"
+            mkdir -p dist && cp -r * dist 2>/dev/null || true
+            echo "DEPLOY_PATH=dist" >> $GITHUB_ENV
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.DEPLOY_PATH }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
