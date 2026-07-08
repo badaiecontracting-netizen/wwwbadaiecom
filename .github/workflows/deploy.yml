@@ -19,18 +19,34 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Re-Route Output Folders to Root
+      - name: Debug and Route Build Artifacts Cleanly
         run: |
           mkdir -p final_root_dist
-          # Copy whatever output subfolder Lovable built into the root package path
+          echo "=== Displaying build directory map ==="
+          ls -la
+          if [ -d "dist" ]; then ls -la dist/; fi
+          
+          # Target folder selection logic based on common directory footprints
           if [ -d "dist/wwwbadaiecom" ]; then
             cp -r dist/wwwbadaiecom/* final_root_dist/
           elif [ -d "dist/client" ]; then
             cp -r dist/client/* final_root_dist/
-          elif [ -d "dist" ]; then
+          elif [ -d "dist" ] && [ -f "dist/index.html" ]; then
             cp -r dist/* final_root_dist/
+          else
+            # Deep search fallback path resolution for index files
+            INDEX_PATH=$(find . -name index.html -not -path "*/node_modules/*" -not -path "./final_root_dist/*" | head -n 1)
+            if [ ! -z "$INDEX_PATH" ]; then
+              TARGET_DIR=$(dirname "$INDEX_PATH")
+              echo "Discovered entry layout folder index at: $TARGET_DIR"
+              cp -r $TARGET_DIR/* final_root_dist/
+            else
+              echo "Root fallback mechanism activated"
+              cp -r * final_root_dist/ 2>/dev/null || true
+            fi
           fi
-          # Inject domain tracking records
+          
+          # Inject final routing mapping parameters
           echo "badaie.com" > final_root_dist/CNAME
           cp final_root_dist/index.html final_root_dist/404.html || true
       - uses: actions/upload-pages-artifact@v3
