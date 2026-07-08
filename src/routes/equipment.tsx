@@ -10,6 +10,8 @@ import generator from "@/assets/eq-generator.jpg";
 import compressor from "@/assets/eq-compressor.jpg";
 import welding from "@/assets/eq-welding.jpg";
 import scaffolding from "@/assets/eq-scaffolding.jpg";
+import tools from "@/assets/eq-tools.jpg";
+import support from "@/assets/eq-support.jpg";
 
 export const Route = createFileRoute("/equipment")({
   head: () => ({
@@ -35,8 +37,8 @@ const EQUIPMENT = [
   { img: compressor, t: "Compressors", d: "Industrial air compressors for construction & maintenance." },
   { img: welding, t: "Welding Machines", d: "SMAW, GTAW and MIG welding sets for all applications." },
   { img: scaffolding, t: "Scaffolding", d: "Cup-lock and ring-lock scaffolding, complete solutions." },
-  { img: excavator, t: "Construction Tools", d: "Full range of powered and hand tools for site teams." },
-  { img: loader, t: "Support Equipment", d: "Water tankers, telehandlers, boom lifts and more." },
+  { img: tools, t: "Construction Tools", d: "Full range of powered and hand tools for site teams." },
+  { img: support, t: "Support Equipment", d: "Water tankers, telehandlers, boom lifts and more." },
 ];
 
 function Equipment() {

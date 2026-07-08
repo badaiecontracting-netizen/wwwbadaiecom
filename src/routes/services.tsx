@@ -9,6 +9,11 @@ import mech from "@/assets/service-mechanical.jpg";
 import elec from "@/assets/service-electrical.jpg";
 import pipe from "@/assets/service-piping.jpg";
 import steel from "@/assets/service-steel.jpg";
+import duct from "@/assets/service-duct.jpg";
+import rental from "@/assets/service-rental.jpg";
+import manpower from "@/assets/service-manpower.jpg";
+import material from "@/assets/service-material.jpg";
+import support from "@/assets/service-support.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -31,11 +36,11 @@ const SERVICES = [
   { Icon: Zap, title: "Electrical Works", desc: "LV/HV electrical installation, cabling, panels and instrumentation.", img: elec },
   { Icon: Factory, title: "Piping", desc: "Prefabrication and site installation of process, utility and structural piping.", img: pipe },
   { Icon: Hammer, title: "Steel Fabrication", desc: "In-house steel fabrication for structures, platforms and pressure parts.", img: steel },
-  { Icon: Boxes, title: "Duct Fabrication & Installation", desc: "HVAC and industrial duct systems fabricated and installed on site.", img: mech },
-  { Icon: Truck, title: "Equipment Rental", desc: "Cranes, excavators, loaders, generators and specialty equipment.", img: maint },
-  { Icon: Users, title: "Manpower Supply", desc: "Trained, certified and experienced manpower for short and long-term deployment.", img: civil },
-  { Icon: Package, title: "Material Supply", desc: "Sourcing and supply of construction and industrial materials.", img: steel },
-  { Icon: Briefcase, title: "Industrial Support Services", desc: "Site support, logistics, scaffolding and specialized trades.", img: pipe },
+  { Icon: Boxes, title: "Duct Fabrication & Installation", desc: "HVAC and industrial duct systems fabricated and installed on site.", img: duct },
+  { Icon: Truck, title: "Equipment Rental", desc: "Cranes, excavators, loaders, generators and specialty equipment.", img: rental },
+  { Icon: Users, title: "Manpower Supply", desc: "Trained, certified and experienced manpower for short and long-term deployment.", img: manpower },
+  { Icon: Package, title: "Material Supply", desc: "Sourcing and supply of construction and industrial materials.", img: material },
+  { Icon: Briefcase, title: "Industrial Support Services", desc: "Site support, logistics, scaffolding and specialized trades.", img: support },
 ];
 
 function Services() {

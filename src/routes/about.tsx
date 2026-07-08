@@ -147,11 +147,11 @@ function About() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
-              "Over 20 years of proven experience in KSA",
+              "Over 5 years of proven experience in KSA",
               "Fully owned modern equipment fleet",
               "ISO-certified quality management",
               "Robust HSE and safety training culture",
-              "Skilled multinational workforce of 1,500+",
+              "Skilled multinational workforce of 150+",
               "Trusted by leading oil, gas & industrial clients",
             ].map((f) => (
               <div key={f} className="flex items-start gap-3 bg-white p-5">
