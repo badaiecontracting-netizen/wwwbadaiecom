@@ -19,39 +19,21 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Debug and Route Build Artifacts Cleanly
+      - name: Clean Output for Custom Domain
         run: |
-          mkdir -p final_root_dist
-          echo "=== Displaying build directory map ==="
-          ls -la
-          if [ -d "dist" ]; then ls -la dist/; fi
-          
-          # Target folder selection logic based on common directory footprints
-          if [ -d "dist/wwwbadaiecom" ]; then
-            cp -r dist/wwwbadaiecom/* final_root_dist/
-          elif [ -d "dist/client" ]; then
-            cp -r dist/client/* final_root_dist/
-          elif [ -d "dist" ] && [ -f "dist/index.html" ]; then
-            cp -r dist/* final_root_dist/
+          # Inject custom domain directly into the correct hidden compilation output folder
+          if [ -d ".output/public" ]; then
+            echo "badaie.com" > .output/public/CNAME
+            cp .output/public/index.html .output/public/404.html || true
+            echo "DEPLOY_TARGET=.output/public" >> $GITHUB_ENV
           else
-            # Deep search fallback path resolution for index files
-            INDEX_PATH=$(find . -name index.html -not -path "*/node_modules/*" -not -path "./final_root_dist/*" | head -n 1)
-            if [ ! -z "$INDEX_PATH" ]; then
-              TARGET_DIR=$(dirname "$INDEX_PATH")
-              echo "Discovered entry layout folder index at: $TARGET_DIR"
-              cp -r $TARGET_DIR/* final_root_dist/
-            else
-              echo "Root fallback mechanism activated"
-              cp -r * final_root_dist/ 2>/dev/null || true
-            fi
+            echo "badaie.com" > .output/CNAME
+            cp .output/index.html .output/404.html || true
+            echo "DEPLOY_TARGET=.output" >> $GITHUB_ENV
           fi
-          
-          # Inject final routing mapping parameters
-          echo "badaie.com" > final_root_dist/CNAME
-          cp final_root_dist/index.html final_root_dist/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: final_root_dist
+          path: ${{ env.DEPLOY_TARGET }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
