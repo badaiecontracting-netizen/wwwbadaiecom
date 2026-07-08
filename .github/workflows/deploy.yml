@@ -21,13 +21,13 @@ jobs:
       - run: bun run build
       - name: Clean Output for Custom Domain
         run: |
-          # Add custom domain configuration file directly into the dist output folder
-          echo "badaie.com" > dist/CNAME
+          # Add custom domain configuration file directly into the correct client output folder
+          echo "badaie.com" > dist/client/CNAME
           # Create a backup index for custom base path clean fallbacks
-          cp dist/index.html dist/404.html || true
+          cp dist/client/index.html dist/client/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/client
   deploy:
     needs: build
     runs-on: ubuntu-latest
