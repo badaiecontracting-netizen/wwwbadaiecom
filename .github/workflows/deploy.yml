@@ -19,26 +19,26 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Force Static Routing
+      - name: Force Static Routing Output
         run: |
-          # Create clean deployment directory
-          mkdir -p public_deploy_folder
+          # Create a non-hidden deployment directory
+          mkdir -p final_clean_dist
           
-          # Force copy the hidden output files safely
+          # Force copy the hidden output files safely into the visible directory
           if [ -d ".output/public" ]; then
-            cp -r .output/public/* public_deploy_folder/
+            cp -r .output/public/* final_clean_dist/
           elif [ -d ".output" ]; then
-            cp -r .output/* public_deploy_folder/
-          else
-            cp -r * public_deploy_folder/ 2>/dev/null || true
+            cp -r .output/* final_clean_dist/
           fi
           
-          # Lock in custom domain and fallbacks
-          echo "badaie.com" > public_deploy_folder/CNAME
-          cp public_deploy_folder/index.html public_deploy_folder/404.html || true
+          # Inject custom domain tracking files
+          echo "badaie.com" > final_clean_dist/CNAME
+          if [ -f "final_clean_dist/index.html" ]; then
+            cp final_clean_dist/index.html final_clean_dist/404.html
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public_deploy_folder
+          path: final_clean_dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
