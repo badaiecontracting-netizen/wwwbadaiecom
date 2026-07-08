@@ -19,14 +19,26 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Configure Custom Domain Tracking
+      - name: Force Static Routing
         run: |
-          # Inject domain routing files straight to the active compilation destination
-          echo "badaie.com" > .output/public/CNAME
-          cp .output/public/index.html .output/public/404.html || true
+          # Create clean deployment directory
+          mkdir -p public_deploy_folder
+          
+          # Force copy the hidden output files safely
+          if [ -d ".output/public" ]; then
+            cp -r .output/public/* public_deploy_folder/
+          elif [ -d ".output" ]; then
+            cp -r .output/* public_deploy_folder/
+          else
+            cp -r * public_deploy_folder/ 2>/dev/null || true
+          fi
+          
+          # Lock in custom domain and fallbacks
+          echo "badaie.com" > public_deploy_folder/CNAME
+          cp public_deploy_folder/index.html public_deploy_folder/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: public_deploy_folder
   deploy:
     needs: build
     runs-on: ubuntu-latest
