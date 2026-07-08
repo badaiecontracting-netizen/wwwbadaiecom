@@ -19,22 +19,23 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Ensure Output Directory Exists
+      - name: Fix Routing and Move Files to Root
         run: |
+          mkdir -p final_dist
           if [ -d "dist/client" ]; then
-            echo "Found dist/client folder"
-            echo "DEPLOY_PATH=dist/client" >> $GITHUB_ENV
+            cp -r dist/client/* final_dist/
           elif [ -d "dist" ]; then
-            echo "Found dist folder"
-            echo "DEPLOY_PATH=dist" >> $GITHUB_ENV
+            cp -r dist/* final_dist/
           else
-            echo "Fall back to root directory structure"
-            mkdir -p dist && cp -r * dist 2>/dev/null || true
-            echo "DEPLOY_PATH=dist" >> $GITHUB_ENV
+            cp -r * final_dist/
           fi
+          # Add custom domain file so GitHub doesn't lose it
+          echo "badaie.com" > final_dist/CNAME
+          # Create a copy of index for clean custom domain routing
+          cp final_dist/index.html final_dist/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.DEPLOY_PATH }}
+          path: final_dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
