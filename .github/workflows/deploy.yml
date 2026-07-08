@@ -19,23 +19,15 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-      - name: Fix Routing and Move Files to Root
+      - name: Clean Output for Custom Domain
         run: |
-          mkdir -p final_dist
-          if [ -d "dist/client" ]; then
-            cp -r dist/client/* final_dist/
-          elif [ -d "dist" ]; then
-            cp -r dist/* final_dist/
-          else
-            cp -r * final_dist/
-          fi
-          # Add custom domain file so GitHub doesn't lose it
-          echo "badaie.com" > final_dist/CNAME
-          # Create a copy of index for clean custom domain routing
-          cp final_dist/index.html final_dist/404.html || true
+          # Add custom domain configuration file directly into the dist output folder
+          echo "badaie.com" > dist/CNAME
+          # Create a backup index for custom base path clean fallbacks
+          cp dist/index.html dist/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: final_dist
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
