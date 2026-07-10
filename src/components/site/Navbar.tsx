@@ -39,9 +39,9 @@ export function Navbar() {
           <div className="grid h-12 w-12 place-items-center rounded-full bg-white/95 p-1 shadow-md ring-1 ring-gold/40 transition group-hover:ring-gold">
             <img src={logo.url} alt="Badaie" className="h-full w-full object-cover rounded-full" />
           </div>
-          <div className="hidden sm:block leading-tight">
-            <div className="text-white font-display text-lg font-semibold tracking-tight">Badaie</div>
-            <div className="text-gold text-[10px] tracking-[0.28em] uppercase">HEAVY GEN.CONT.EST</div>
+          <div className="block min-w-0 leading-tight">
+            <div className="text-white font-display text-base sm:text-lg font-semibold tracking-tight">Badaie</div>
+            <div className="text-gold text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.28em] uppercase">HEAVY GEN.CONT.EST</div>
           </div>
         </Link>
 
