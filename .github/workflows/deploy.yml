@@ -2,43 +2,78 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - run: bun install
-      - run: bun run build
-      - name: Force Static Routing Output
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build project
+        run: bun run build
+
+      - name: Prepare GitHub Pages artifact
         run: |
-          # Create a non-hidden deployment directory
+          # Create a clean, non-hidden deployment directory
           mkdir -p final_clean_dist
-          
-          # Force copy the hidden output files safely into the visible directory
+
+          # Determine the Vite/TanStack Start static output location.
+          # The build writes assets to .output/public when available,
+          # otherwise falls back to the .output root.
           if [ -d ".output/public" ]; then
-            cp -r .output/public/* final_clean_dist/
+            cp -rT .output/public final_clean_dist
           elif [ -d ".output" ]; then
-            cp -r .output/* final_clean_dist/
+            cp -rT .output final_clean_dist
+          else
+            echo "Error: No build output directory found (.output/public or .output)"
+            exit 1
           fi
-          
-          # Inject custom domain tracking files
+
+          # Ensure GitHub Pages does not ignore files/folders starting with "_"
+          touch final_clean_dist/.nojekyll
+
+          # Custom domain for GitHub Pages
           echo "badaie.com" > final_clean_dist/CNAME
+
+          # SPA fallback: copy index.html to 404.html so client-side routes
+          # work when users refresh or visit deep links directly.
           if [ -f "final_clean_dist/index.html" ]; then
             cp final_clean_dist/index.html final_clean_dist/404.html
+          else
+            echo "Error: index.html is missing from the build output"
+            exit 1
           fi
-      - uses: actions/upload-pages-artifact@v3
+
+          # Sanity check: artifact directory must not be empty
+          if [ -z "$(ls -A final_clean_dist)" ]; then
+            echo "Error: final_clean_dist is empty"
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: final_clean_dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -46,5 +81,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
