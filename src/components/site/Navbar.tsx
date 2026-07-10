@@ -41,7 +41,7 @@ export function Navbar() {
           </div>
           <div className="hidden sm:block leading-tight">
             <div className="text-white font-display text-lg font-semibold tracking-tight">Badaie</div>
-            <div className="text-gold text-[10px] tracking-[0.28em] uppercase">Heavy Contracting</div>
+            <div className="text-gold text-[10px] tracking-[0.28em] uppercase">HEAVY GEN.CONT.EST</div>
           </div>
         </Link>
 
