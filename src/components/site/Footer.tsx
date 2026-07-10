@@ -44,7 +44,7 @@ export function Footer() {
             </div>
             <div>
               <div className="font-display text-lg text-white">Badaie</div>
-              <div className="text-gold text-[10px] tracking-[0.28em] uppercase">Heavy Contracting</div>
+              <div className="text-gold text-[10px] tracking-[0.28em] uppercase">HEAVY GEN.CONT.EST</div>
             </div>
           </Link>
           <p className="mt-6 text-sm leading-relaxed text-white/60">
@@ -88,7 +88,6 @@ export function Footer() {
           <h4 className="text-sm uppercase tracking-[0.25em] text-gold mb-5">Services</h4>
           <ul className="space-y-3 text-sm">
             {[
-              "Heavy General Contracting",
               "Civil Construction",
               "Industrial Maintenance",
               "Mechanical Works",

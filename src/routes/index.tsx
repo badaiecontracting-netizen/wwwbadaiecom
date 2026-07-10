@@ -61,7 +61,7 @@ function Home() {
 
         <div className="container-x relative z-10 pt-28 pb-20 text-white">
           <div className="max-w-3xl fade-up">
-            <p className="eyebrow"><span className="gold-line">Est. Kingdom of Saudi Arabia</span></p>
+            <p className="eyebrow"><span className="gold-line">&nbsp;KINGDOM OF SAUDI ARABIA</span></p>
             <h1 className="mt-6 text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05]">
               Building <span className="text-gold italic">Excellence</span> Through Quality, Safety & Innovation.
             </h1>
