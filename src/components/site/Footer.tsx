@@ -94,6 +94,7 @@ export function Footer() {
               "Electrical & Piping",
               "Steel Fabrication",
               "Manpower Supply",
+              "Equipment Rental",
             ].map((s) => (
               <li key={s}><Link to="/services" className="hover:text-gold transition">{s}</Link></li>
             ))}
