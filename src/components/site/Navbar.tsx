@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/badaie-logo.asset.json";
+import logo from "@/assets/badaie-logo.jpeg";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -37,7 +37,7 @@ export function Navbar() {
       <div className="container-x flex h-20 items-center justify-between gap-4">
         <Link to="/" className="inline-flex flex-nowrap items-center gap-2 sm:gap-3 shrink-0 group" onClick={() => setOpen(false)}>
           <div className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center self-center rounded-full bg-white/95 p-1 shadow-md ring-1 ring-gold/40 transition group-hover:ring-gold">
-            <img src={logo.url} alt="Badaie" className="h-full w-full object-cover rounded-full" />
+            <img src={logo} alt="Badaie" className="h-full w-full object-cover rounded-full" />
           </div>
           <div className="flex flex-col justify-center min-w-0 leading-tight">
             <div className="text-white font-display text-sm sm:text-base lg:text-lg font-semibold tracking-tight whitespace-nowrap">Badaie</div>
