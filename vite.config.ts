@@ -20,7 +20,5 @@ export default defineConfig({
       { path: "/terms" },
     ],
   },
-  nitro: {
-    preset: "github_pages",
-  },
+  nitro: false,
 });
