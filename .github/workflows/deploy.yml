@@ -36,17 +36,20 @@ jobs:
           # Create a clean, non-hidden deployment directory
           mkdir -p final_clean_dist
 
-          # Determine the Vite/TanStack Start static output location.
-          # The build writes assets to .output/public when available,
-          # otherwise falls back to the .output root.
-          if [ -d ".output/public" ]; then
+          # TanStack Start prerender writes the static site (including
+          # index.html and per-route folders) to dist/client. Fall back to
+          # .output/public for other Nitro presets, then .output root.
+          if [ -d "dist/client" ]; then
+            cp -rT dist/client final_clean_dist
+          elif [ -d ".output/public" ]; then
             cp -rT .output/public final_clean_dist
           elif [ -d ".output" ]; then
             cp -rT .output final_clean_dist
           else
-            echo "Error: No build output directory found (.output/public or .output)"
+            echo "Error: No build output directory found (dist/client, .output/public, .output)"
             exit 1
           fi
+
 
           # Ensure GitHub Pages does not ignore files/folders starting with "_"
           touch final_clean_dist/.nojekyll
