@@ -53,7 +53,7 @@ function Clients() {
         <div className="container-x">
           <div className="mx-auto max-w-5xl rounded-lg border border-border bg-white p-8 md:p-12 shadow-sm">
             <img
-              src={clientsLogos.url}
+              src={clientsLogos}
               alt="Badaie clients — Al Amara International, Plant-Tech Arabia, Arabian Qudra, CRCC, Esnad International, Kamco"
               className="w-full h-auto"
             />
