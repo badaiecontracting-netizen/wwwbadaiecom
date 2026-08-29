@@ -72,7 +72,7 @@ export function Footer() {
             {[
               ["/about", "About Us"],
               ["/projects", "Our Projects"],
-              ["/equipment", "Equipment"],
+              ["/equipment", "Equipment Rental"],
               ["/clients", "Clients"],
               ["/safety", "Safety & Quality"],
               ["/gallery", "Gallery"],

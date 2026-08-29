@@ -17,10 +17,10 @@ import dumpTruck from "@/assets/eq-dumptruck.png";
 export const Route = createFileRoute("/equipment")({
   head: () => ({
     meta: [
-      { title: "Equipment Fleet | Badaie Heavy General Contracting" },
-      { name: "description", content: "Explore Badaie's owned equipment fleet: excavators, cranes, loaders, forklifts, generators, compressors, welding machines, scaffolding and more." },
-      { property: "og:title", content: "Badaie Equipment Fleet" },
-      { property: "og:description", content: "A modern, owned fleet of construction equipment ready for deployment across KSA." },
+      { title: "Equipment Rental | Badaie Heavy General Contracting" },
+      { name: "description", content: "Rent modern, well-maintained construction equipment from Badaie: excavators, cranes, loaders, forklifts, generators, compressors, welding machines, scaffolding and more across KSA." },
+      { property: "og:title", content: "Badaie Equipment Rental" },
+      { property: "og:description", content: "A modern fleet of heavy machinery and construction equipment available for rental across KSA." },
     ],
     links: [{ rel: "canonical", href: "/equipment" }],
   }),
@@ -47,9 +47,9 @@ function Equipment() {
   return (
     <>
       <PageHero
-        eyebrow="Our Fleet"
-        title="Modern, owned equipment — ready when your project is."
-        subtitle="Badaie operates a diversified fleet of heavy machinery, specialized equipment and construction tools maintained to the highest reliability standards."
+        eyebrow="Equipment Rental"
+        title="Modern, well-maintained equipment — ready when your project is."
+        subtitle="Badaie offers a diversified fleet of heavy machinery, specialized equipment and construction tools for rental across the Kingdom of Saudi Arabia."
       />
 
       <section className="section-y bg-white">
