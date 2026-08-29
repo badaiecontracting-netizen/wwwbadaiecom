@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import dumpTruckAsset from "@/assets/dump-truck.png.asset.json";
 import excavator from "@/assets/eq-excavator.jpg";
 import loader from "@/assets/eq-loader.jpg";
 import crane from "@/assets/eq-crane.jpg";
@@ -12,6 +13,8 @@ import welding from "@/assets/eq-welding.jpg";
 import scaffolding from "@/assets/eq-scaffolding.jpg";
 import tools from "@/assets/eq-tools.jpg";
 import support from "@/assets/eq-support.jpg";
+
+const dumpTruck = dumpTruckAsset.url;
 
 export const Route = createFileRoute("/equipment")({
   head: () => ({
@@ -30,6 +33,7 @@ const EQUIPMENT = [
   { img: excavator, t: "Excavators", d: "Heavy-duty tracked excavators for earthworks & foundations." },
   { img: loader, t: "Wheel Loaders", d: "Material handling and site logistics across all project sizes." },
   { img: backhoe, t: "Backhoe Loaders", d: "Versatile machines for excavation, loading and utility work." },
+  { img: dumpTruck, t: "Dump Trucks", d: "Heavy-duty tipper trucks for hauling aggregates, spoil and bulk materials." },
   { img: forklift, t: "Forklifts", d: "Diesel & LPG forklifts for warehouse and site operations." },
   { img: boom, t: "Boom Trucks", d: "Truck-mounted cranes for material lifting and placement." },
   { img: crane, t: "Mobile Cranes", d: "All-terrain mobile cranes for heavy lifting operations." },
