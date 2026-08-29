@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import dumpTruckAsset from "@/assets/dump-truck.png.asset.json";
 import excavator from "@/assets/eq-excavator.jpg";
 import loader from "@/assets/eq-loader.jpg";
 import crane from "@/assets/eq-crane.jpg";
@@ -12,6 +13,8 @@ import welding from "@/assets/eq-welding.jpg";
 import scaffolding from "@/assets/eq-scaffolding.jpg";
 import tools from "@/assets/eq-tools.jpg";
 import support from "@/assets/eq-support.jpg";
+
+const dumpTruck = dumpTruckAsset.url;
 
 export const Route = createFileRoute("/equipment")({
   head: () => ({
