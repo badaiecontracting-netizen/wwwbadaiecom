@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import clientsLogos from "@/assets/clients-logos.png";
 
 
 export const Route = createFileRoute("/clients")({
@@ -51,14 +50,6 @@ function Clients() {
 
       <section className="section-y bg-white">
         <div className="container-x">
-          <div className="mx-auto max-w-5xl rounded-lg border border-border bg-white p-8 md:p-12 shadow-sm">
-            <img
-              src={clientsLogos}
-              alt="Badaie clients — Al Amara International, Plant-Tech Arabia, Arabian Qudra, CRCC, Esnad International, Kamco"
-              className="w-full h-auto"
-            />
-          </div>
-
           <h2 className="sr-only">Client logos</h2>
           <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {CLIENTS.map((c) => (
