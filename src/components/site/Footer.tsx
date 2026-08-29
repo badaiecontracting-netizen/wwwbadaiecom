@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/badaie-logo.asset.json";
+import logo from "@/assets/badaie-logo.jpeg";
 
 const SOCIALS = [
   { href: "https://www.linkedin.com/company/badaie-heavy-gen-cont-est/", label: "LinkedIn", Icon: Linkedin },
