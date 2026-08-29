@@ -33,6 +33,7 @@ const EQUIPMENT = [
   { img: excavator, t: "Excavators", d: "Heavy-duty tracked excavators for earthworks & foundations." },
   { img: loader, t: "Wheel Loaders", d: "Material handling and site logistics across all project sizes." },
   { img: backhoe, t: "Backhoe Loaders", d: "Versatile machines for excavation, loading and utility work." },
+  { img: dumpTruck, t: "Dump Trucks", d: "Heavy-duty tipper trucks for hauling aggregates, spoil and bulk materials." },
   { img: forklift, t: "Forklifts", d: "Diesel & LPG forklifts for warehouse and site operations." },
   { img: boom, t: "Boom Trucks", d: "Truck-mounted cranes for material lifting and placement." },
   { img: crane, t: "Mobile Cranes", d: "All-terrain mobile cranes for heavy lifting operations." },
