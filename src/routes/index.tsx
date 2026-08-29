@@ -66,7 +66,7 @@ function Home() {
               Building <span className="text-gold italic">Excellence</span> Through Quality, Safety & Innovation.
             </h1>
             <p className="mt-8 max-w-xl text-white/75 text-lg leading-relaxed">
-              Badaie Heavy General Contracting Est. delivers world-class civil, industrial and specialized construction services across the Kingdom of Saudi Arabia.
+              Badaie Heavy General Contracting Est. delivers world-class civil, industrial, Manpower Supply, Equipment Rental and specialized construction services across the Kingdom of Saudi Arabia.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link to="/contact" className="btn-primary">
