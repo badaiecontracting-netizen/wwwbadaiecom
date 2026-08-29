@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/badaie-logo.asset.json";
+import logo from "@/assets/badaie-logo.jpeg";
 
 const SOCIALS = [
   { href: "https://www.linkedin.com/company/badaie-heavy-gen-cont-est/", label: "LinkedIn", Icon: Linkedin },
@@ -40,7 +40,7 @@ export function Footer() {
         <div>
           <Link to="/" className="flex items-center gap-3">
             <div className="grid h-14 w-14 place-items-center rounded-full bg-white p-1">
-              <img src={logo.url} alt="Badaie" className="h-full w-full object-cover rounded-full" />
+              <img src={logo} alt="Badaie" className="h-full w-full object-cover rounded-full" />
             </div>
             <div>
               <div className="font-display text-lg text-white">Badaie</div>
