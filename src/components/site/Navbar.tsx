@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/badaie-logo.jpeg";
 
@@ -18,6 +18,7 @@ const NAV = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const menuId = useId();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -25,6 +26,18 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
 
   return (
     <header
@@ -66,8 +79,11 @@ export function Navbar() {
             Get Quote
           </Link>
           <button
-            aria-label="Toggle menu"
-            className="lg:hidden text-white p-2"
+            type="button"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls={menuId}
+            className="lg:hidden grid h-11 w-11 place-items-center text-white"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
@@ -77,8 +93,9 @@ export function Navbar() {
 
       {/* mobile */}
       <div
-        className={`lg:hidden overflow-hidden transition-[max-height] duration-500 bg-navy-deep/98 backdrop-blur-lg ${
-          open ? "max-h-[600px]" : "max-h-0"
+        id={menuId}
+        className={`lg:hidden overflow-x-hidden transition-[max-height] duration-500 bg-navy-deep/98 backdrop-blur-lg ${
+          open ? "max-h-[calc(100dvh-5rem)] overflow-y-auto" : "max-h-0 overflow-y-hidden"
         }`}
       >
         <nav className="container-x flex flex-col py-4">
@@ -87,7 +104,7 @@ export function Navbar() {
               key={n.to}
               to={n.to}
               onClick={() => setOpen(false)}
-              className="py-3 border-b border-white/10 text-white/85 hover:text-gold text-sm tracking-wide [&.active]:text-gold"
+              className="flex min-h-12 items-center border-b border-white/10 text-white/85 hover:text-gold text-sm tracking-wide [&.active]:text-gold"
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
