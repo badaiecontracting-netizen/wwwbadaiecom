@@ -80,34 +80,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Badaie Heavy General Contracting Est. | Al Jubail, KSA" },
-      {
-        name: "description",
-        content:
-          "Badaie Heavy General Contracting Est. delivers civil, industrial, mechanical, electrical & piping construction services across the Kingdom of Saudi Arabia. Based in Al Jubail.",
-      },
       { name: "author", content: "Badaie Heavy General Contracting Est." },
-      { name: "keywords", content: "Badaie, heavy contracting, Al Jubail, Saudi Arabia, civil construction, industrial maintenance, mechanical, electrical, piping, steel fabrication, KSA contractor" },
-      { property: "og:title", content: "Badaie Heavy General Contracting Est." },
-      { property: "og:description", content: "Building Excellence Through Quality, Safety & Innovation — trusted heavy contractor in the Kingdom of Saudi Arabia." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Badaie Heavy Contracting" },
-      
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@BH_Contracting" },
-      { name: "twitter:title", content: "Badaie Heavy General Contracting Est." },
-      { name: "twitter:description", content: "Building Excellence Through Quality, Safety & Innovation." },
+      { property: "og:site_name", content: "Badaie Heavy Gen. Cont. Est." },
       { name: "theme-color", content: "#0B1F3A" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "/" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap",
       },
     ],
     scripts: [
@@ -163,8 +148,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <Outlet />
       </main>
       <Footer />
