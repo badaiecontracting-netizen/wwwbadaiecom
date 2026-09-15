@@ -6,8 +6,13 @@ export const Route = createFileRoute("/terms")({
     meta: [
       { title: "Terms & Conditions | Badaie Heavy General Contracting" },
       { name: "description", content: "Terms and conditions of using the Badaie Heavy General Contracting Est. website." },
+      { property: "og:title", content: "Terms & Conditions | Badaie" },
+      { property: "og:description", content: "Website terms for Badaie Heavy Gen. Cont. Est." },
+      { property: "og:url", content: "https://www.badaie.com/terms" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://www.badaie.com/terms" }],
   }),
   component: () => (
     <>
