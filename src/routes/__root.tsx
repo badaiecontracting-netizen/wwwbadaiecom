@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Badaie Heavy General Contracting Est." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Badaie Heavy Gen. Cont. Est." },
-      { name: "theme-color", content: "#0B1F3A" },
+      { name: "theme-color", content: "#29358B" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -114,10 +114,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           areaServed: "SA",
           sameAs: [
-            "https://www.linkedin.com/company/badaie-heavy-gen-cont-est/",
-            "https://www.facebook.com/share/1YBqEP3SAQ/",
             "https://youtube.com/@bhc_sa",
+            "https://www.linkedin.com/company/badaie-heavy-gen-cont-est/",
+            "https://www.facebook.com/share/19VQTmKVyM/",
+            "https://www.tiktok.com/@bhc.sa",
             "https://x.com/BH_Contracting",
+            "https://whatsapp.com/channel/0029Vaz5dXx5PO0srOGcXK2M",
           ],
         }),
       },

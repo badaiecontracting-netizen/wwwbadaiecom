@@ -6,3 +6,6 @@
 - [x] Refine navigation, shared layout, CTAs, and mobile behavior
 - [x] Complete per-route SEO and accessibility improvements
 - [x] Validate all routes, links, imagery, interactions, and responsive layouts
+- [x] Add the six verified clients and official social accounts
+- [x] Align the existing theme with the official Badaie logo colors
+- [x] Revalidate desktop and mobile layouts after final corrections
