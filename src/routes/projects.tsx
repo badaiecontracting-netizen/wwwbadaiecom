@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowRight, Building2, ClipboardCheck, HardHat, Settings, Truck } from "lucide-react";
-import civil from "@/assets/project-civil.jpg"; import industrial from "@/assets/project-industrial.jpg"; import infrastructure from "@/assets/project-infrastructure.jpg";
+import civil from "@/assets/project-civil.jpg"; import industrial from "@/assets/project-industrial.jpg"; import infrastructure from "@/assets/project-civil-earth.jpg";
 const SITE="https://www.badaie.com";
 export const Route=createFileRoute("/projects")({head:()=>({meta:[{title:"Project Capabilities | Badaie Contracting KSA"},{name:"description",content:"Explore Badaie project capability areas across construction and contracting, civil and earth work, industrial services, equipment and manpower in Saudi Arabia."},{property:"og:title",content:"Badaie Project Capabilities"},{property:"og:description",content:"Capability areas for construction and industrial project requirements in Saudi Arabia."},{property:"og:url",content:`${SITE}/projects`},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}],links:[{rel:"canonical",href:`${SITE}/projects`}]}),component:Projects});
 const AREAS=[{Icon:Building2,t:"Construction & Contracting",d:"Civil construction, infrastructure works and earth work.",img:civil},{Icon:HardHat,t:"Civil & Earth Work",d:"Excavation, filling, compacting and surfacing work.",img:infrastructure},{Icon:Settings,t:"Industrial Services",d:"Maintenance, mechanical, electrical, piping, welding and fabrication.",img:industrial}];
