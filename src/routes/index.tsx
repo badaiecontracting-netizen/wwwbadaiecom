@@ -5,7 +5,7 @@ import aboutImg from "@/assets/about-industrial.jpg";
 import civilImg from "@/assets/service-civil.jpg";
 import equipmentImg from "@/assets/service-rental.jpg";
 import manpowerImg from "@/assets/service-manpower.jpg";
-import powerImg from "@/assets/eq-generator.jpg";
+import powerImg from "@/assets/power-rental.jpg.asset.json";
 import materialImg from "@/assets/service-material.jpg";
 import maintenanceImg from "@/assets/service-maintenance.jpg";
 

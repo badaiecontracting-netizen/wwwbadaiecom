@@ -11,7 +11,7 @@ import rental from "@/assets/service-rental.jpg";
 import manpower from "@/assets/service-manpower.jpg";
 import material from "@/assets/service-material.jpg";
 import support from "@/assets/service-support.jpg";
-import power from "@/assets/eq-generator.jpg";
+import power from "@/assets/power-rental.jpg.asset.json";
 import scaffold from "@/assets/eq-scaffolding.jpg";
 
 const SITE = "https://www.badaie.com";
