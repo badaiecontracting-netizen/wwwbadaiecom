@@ -31,7 +31,7 @@ const SERVICES = [
   { Icon: Wrench, title: "Maintenance", desc: "Maintenance services for industrial requirements.", img: maint },
   { Icon: Users, title: "Manpower Supply", desc: "Engineering, supervision, operators and skilled manpower categories.", img: manpower },
   { Icon: Truck, title: "Heavy Equipment Rental", desc: "Heavy equipment and construction equipment categories.", img: rental, to: "/equipment" as const },
-  { Icon: Zap, title: "Power Rental", desc: "Generators, tower lights, air compressors and hydro jetting.", img: power },
+  { Icon: Zap, title: "Power Rental", desc: "Generators, tower lights, air compressors and hydro jetting.", img: power.url },
   { Icon: Package, title: "Material Supply", desc: "Material categories for civil construction and industrial requirements.", img: material },
   { Icon: Boxes, title: "Scaffolding", desc: "Scaffolding services for project work areas.", img: scaffold },
   { Icon: Hammer, title: "Welding & Fabrication", desc: "Welding and fabrication services for project requirements.", img: steel },
