@@ -5,7 +5,7 @@ import aboutImg from "@/assets/about-industrial.jpg";
 import civilImg from "@/assets/service-civil.jpg";
 import equipmentImg from "@/assets/service-rental.jpg";
 import manpowerImg from "@/assets/service-manpower.jpg";
-import powerImg from "@/assets/power-rental.jpg.asset.json";
+import powerImg from "@/assets/power-rental.jpg";
 import materialImg from "@/assets/service-material.jpg";
 import maintenanceImg from "@/assets/service-maintenance.jpg";
 
@@ -39,7 +39,7 @@ const CORE = [
 const SERVICE_FEATURES = [
   { img: equipmentImg, title: "Equipment Rental", text: "Explore the equipment categories presented by Badaie.", to: "/equipment" as const },
   { img: manpowerImg, title: "Manpower Supply", text: "Engineering, supervision, operators and skilled manpower.", to: "/services" as const },
-  { img: powerImg.url, title: "Power Rental", text: "Generators, tower lights, air compressors and hydro jetting.", to: "/services" as const },
+  { img: powerImg, title: "Power Rental", text: "Generators, tower lights, air compressors and hydro jetting.", to: "/services" as const },
   { img: materialImg, title: "Material Supply", text: "Materials for civil construction and industrial requirements.", to: "/services" as const },
 ];
 
