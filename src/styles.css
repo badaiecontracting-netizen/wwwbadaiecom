@@ -307,3 +307,47 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ACCESSIBILITY CONTRAST FIX - 20260925 */
+
+/* Darker cyan for text on light backgrounds */
+.eyebrow {
+  color: #0077A6 !important;
+}
+
+/* Light cyan for text on dark branded backgrounds */
+.bg-navy .eyebrow,
+.bg-navy-deep .eyebrow {
+  color: #70c6e2 !important;
+}
+
+/* Accessible primary button contrast */
+.btn-primary {
+  background: #70c6e2 !important;
+  color: #293080 !important;
+  border-color: #70c6e2 !important;
+}
+
+.btn-primary:hover {
+  background: #0077A6 !important;
+  color: #ffffff !important;
+  border-color: #0077A6 !important;
+}
+
+/* Gold text → accessible cyan according to background */
+.text-gold {
+  color: #0077A6 !important;
+}
+
+.bg-navy .text-gold,
+.bg-navy-deep .text-gold,
+footer .text-gold,
+header .text-gold {
+  color: #70c6e2 !important;
+}
+
+/* Branded navigation hover/active text on dark header */
+header a:hover,
+header a.active {
+  color: #70c6e2 !important;
+}
