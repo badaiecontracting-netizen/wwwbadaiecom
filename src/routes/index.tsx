@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, HardHat, Users, Truck, Zap, Package, Wrench, Cog, Factory, ShieldCheck } from "lucide-react";
-import hero from "@/assets/hero-construction.jpg";
+import hero from "@/assets/hero-construction.webp";
 import aboutImg from "@/assets/about-industrial.jpg";
 import civilImg from "@/assets/service-civil.webp";
 import equipmentImg from "@/assets/service-rental.webp";

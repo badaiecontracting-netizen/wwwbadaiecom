@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { X } from "lucide-react";
-import img1 from "@/assets/hero-construction.jpg";
+import img1 from "@/assets/hero-construction.webp";
 import img2 from "@/assets/about-industrial.jpg";
 import img3 from "@/assets/service-civil.webp";
 import img4 from "@/assets/service-maintenance.jpg";
