@@ -9,7 +9,7 @@ import pipe from "@/assets/service-piping.jpg";
 import steel from "@/assets/service-steel.jpg";
 import rental from "@/assets/service-rental.jpg";
 import manpower from "@/assets/service-manpower.jpg";
-import material from "@/assets/service-material.jpg";
+import material from "@/assets/service-material.webp";
 import support from "@/assets/service-support.jpg";
 import power from "@/assets/power-rental.jpg";
 import scaffold from "@/assets/eq-scaffolding.jpg";

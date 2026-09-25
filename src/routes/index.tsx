@@ -6,7 +6,7 @@ import civilImg from "@/assets/service-civil.webp";
 import equipmentImg from "@/assets/service-rental.jpg";
 import manpowerImg from "@/assets/service-manpower.jpg";
 import powerImg from "@/assets/power-rental.jpg";
-import materialImg from "@/assets/service-material.jpg";
+import materialImg from "@/assets/service-material.webp";
 import maintenanceImg from "@/assets/service-maintenance.jpg";
 
 const SITE = "https://www.badaie.com";
