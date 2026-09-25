@@ -3,7 +3,7 @@ import { ArrowRight, Building2, HardHat, Users, Truck, Zap, Package, Wrench, Cog
 import hero from "@/assets/hero-construction.jpg";
 import aboutImg from "@/assets/about-industrial.jpg";
 import civilImg from "@/assets/service-civil.webp";
-import equipmentImg from "@/assets/service-rental.jpg";
+import equipmentImg from "@/assets/service-rental.webp";
 import manpowerImg from "@/assets/service-manpower.jpg";
 import powerImg from "@/assets/power-rental.jpg";
 import materialImg from "@/assets/service-material.webp";

@@ -7,7 +7,7 @@ import mech from "@/assets/service-mechanical.jpg";
 import elec from "@/assets/service-electrical.jpg";
 import pipe from "@/assets/service-piping.jpg";
 import steel from "@/assets/service-steel.jpg";
-import rental from "@/assets/service-rental.jpg";
+import rental from "@/assets/service-rental.webp";
 import manpower from "@/assets/service-manpower.jpg";
 import material from "@/assets/service-material.webp";
 import support from "@/assets/service-support.jpg";
