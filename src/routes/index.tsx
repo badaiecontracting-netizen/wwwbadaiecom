@@ -50,7 +50,7 @@ function Home() {
         <img src={hero} alt="Construction and heavy equipment operations in Saudi Arabia" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1080} fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/85 to-navy/45" />
         <div className="container-x relative z-10 py-32 md:py-40">
-          <div className="max-w-4xl fade-up">
+          <div className="max-w-4xl">
             <p className="eyebrow"><span className="gold-line">Al Jubail · Saudi Arabia</span></p>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.08]">Heavy Equipment, Manpower & Industrial Services</h1>
             <p className="mt-7 max-w-2xl text-base md:text-xl text-white/80 leading-relaxed">Badaie Heavy Gen. Cont. Est. provides Construction & Contracting, equipment rental, manpower supply, power rental, material supply and industrial services in the Kingdom of Saudi Arabia.</p>
