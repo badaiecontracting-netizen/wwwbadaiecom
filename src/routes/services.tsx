@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowRight, Building2, HardHat, Wrench, Cog, Zap, Factory, Hammer, Boxes, Truck, Users, Package, Briefcase, CircleDot } from "lucide-react";
-import civil from "@/assets/service-civil.jpg";
+import civil from "@/assets/service-civil.webp";
 import maint from "@/assets/service-maintenance.jpg";
 import mech from "@/assets/service-mechanical.jpg";
 import elec from "@/assets/service-electrical.jpg";

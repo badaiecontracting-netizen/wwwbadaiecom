@@ -4,7 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { X } from "lucide-react";
 import img1 from "@/assets/hero-construction.jpg";
 import img2 from "@/assets/about-industrial.jpg";
-import img3 from "@/assets/service-civil.jpg";
+import img3 from "@/assets/service-civil.webp";
 import img4 from "@/assets/service-maintenance.jpg";
 import img5 from "@/assets/service-mechanical.jpg";
 import img6 from "@/assets/service-electrical.jpg";
