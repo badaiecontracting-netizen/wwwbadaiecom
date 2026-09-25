@@ -95,6 +95,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
+      {
+        rel: "preload",
+        href: "/fonts/sora-latin.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
     ],
     scripts: [
       {
